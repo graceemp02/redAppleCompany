@@ -1,13 +1,105 @@
+/** @format */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: aliceblue;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.logologin {
+  width: 45%;
+}
+@media screen and (max-width: 599px) {
+  .logologin {
+    width: 200px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.3em;
+  height: 0.3em;
+}
+::-webkit-scrollbar-track {
+  /* background-color: rgba(255, 0, 0, 1); */
+  border-radius: 100vw;
+  margin-block: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2599ca;
+  border-radius: 100vw;
+}
+.input-column {
+  border: 2px solid black;
+  padding: 1.2vh 1vh;
+  border-radius: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3.5vh;
+  flex-wrap: wrap;
+}
+.inner-input {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.inner-file-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.inner-txt-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.input-lable {
+  font-size: 1.7vh;
+
+  width: 35%;
+  text-align: left;
+}
+
+input[type='file'] {
+  font-size: 1.7vh;
+  width: 15rem;
+  margin-block: 2vh;
+}
+.myP {
+  padding: 6px 16px !important;
+}
+.alert {
+  height: 25px;
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .input-lable {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.2vh !important;
+  }
+  form {
+    margin: 0 auto;
+  }
+  .text-btn-status {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
 }

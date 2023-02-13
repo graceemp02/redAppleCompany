@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LoginPage } from './pages';
+import Protected from './context/Protected';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+let theme = createTheme({ typography: { color: 'black', button: { textTransform: 'none' } } });
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/' element={<Protected />} />
+          <Route path='/*' element={<Protected />} />
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
