@@ -7,7 +7,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 let theme = createTheme({ typography: { color: 'black', button: { textTransform: 'none' } } });
 function App() {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
+    <BrowserRouter basename='/company'>
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path='/login' element={<LoginPage />} />

@@ -95,7 +95,7 @@ const FileS = ({ lable, name }) => {
           type='text'
           inputRef={cmtRef}
         />
-        <input type='file' ref={fileRef} required />
+        <input type='file' accept='.pdf,.png,.jpg,jpeg' ref={fileRef} required />
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
           <Button color='success' type='submit' variant='contained' sx={{ mr: 1, height: '30px' }}>
             Upload

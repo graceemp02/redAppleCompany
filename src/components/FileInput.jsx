@@ -35,7 +35,7 @@ const FileInput = ({ lable, name }) => {
         }
       })
       .catch(err => console.log(err));
-  }, []);
+  }, [id, name]);
   const handleSubmit = async e => {
     e.preventDefault();
     let fd = new FormData();

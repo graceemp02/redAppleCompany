@@ -32,16 +32,14 @@ const FileCS = ({ lable, name, sName }) => {
       .then(res => setStatus(+res.data.res))
       .catch(err => console.log(err));
   };
-  const getCmt = async () => {
-    await axios
+
+  useEffect(() => {
+    axios
       .get(`fileInput.php?id=${id}&cmt=${name}`)
       .then(res => (cmtRef.current.value = res.data.res))
       .catch(err => console.log(err));
-  };
-  useEffect(() => {
-    getCmt();
     getStatus();
-  }, []);
+  }, [id, name]);
   useEffect(() => {
     const interval = setInterval(() => getStatus(), 1000);
     return () => clearInterval(interval);
@@ -97,7 +95,7 @@ const FileCS = ({ lable, name, sName }) => {
           type='text'
           inputRef={cmtRef}
         />
-        <input type='file' ref={fileRef} required />
+        <input type='file' accept='.pdf,.png,.jpg,jpeg' ref={fileRef} required />
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
           <Button color='success' type='submit' variant='contained' sx={{ mr: 1, height: '30px' }}>
             Upload

@@ -13,7 +13,11 @@ const TextInput = ({ lable, type, name }) => {
 
   useEffect(() => {
     axios
-      .get(`txtInput.php?id=${id}&name=${name}`)
+      // .get(`txtInput.php?id=${id}&name=${name}`)
+      .get('txtInput.php', {
+        params: { id, name },
+        headers: { 'Content-Type': 'application/json' },
+      })
       .then(res => {
         const data = res.data.res;
         if (data) {
