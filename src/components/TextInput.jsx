@@ -7,7 +7,7 @@ import MyDialog from './MyDialog';
 
 const TextInput = ({ lable, type, name }) => {
   const [dialog, setDialog] = useState({ status: false, msg: '', title: '' });
-  const id = localStorage.getItem('id');
+  const id = localStorage.getItem('com_id');
   const [shrk, setShrk] = useState();
   const txtRef = useRef();
 
@@ -42,7 +42,7 @@ const TextInput = ({ lable, type, name }) => {
           setDialog({
             status: true,
             title: 'Success',
-            msg: ` Updaded Successfully`,
+            msg: ` Updated Successfully`,
           });
         } else {
           setDialog({

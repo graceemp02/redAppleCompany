@@ -21,7 +21,7 @@ function LinearProgressWithLabel(props) {
 }
 const FileS = ({ lable, name }) => {
   const [dialog, setDialog] = useState({ status: false, msg: '', title: '' });
-  const id = localStorage.getItem('id');
+  const id = localStorage.getItem('com_id');
   const fileRef = useRef();
   const cmtRef = useRef();
   const [upload, setUpload] = useState(false);

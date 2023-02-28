@@ -4,7 +4,6 @@ import { Stack } from '@mui/system';
 import FileC from '../components/FileC';
 import TextInput from '../components/TextInput';
 import FileS from '../components/FileS';
-import FileCS from '../components/FileCS';
 
 const ThirdPage = () => {
   return (

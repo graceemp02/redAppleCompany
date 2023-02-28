@@ -3,20 +3,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import LoginBanner from '../assets/loginBanner.jpg';
-import { useState, useContext, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import axios from 'axios';
-import {
-  Button,
-  TextField,
-  Grid,
-  Typography,
-  Box,
-  Paper,
-  CssBaseline,
-  Link,
-  useMediaQuery,
-} from '@mui/material';
+import { Button, TextField, Grid, Typography, Box, Paper, CssBaseline, Link } from '@mui/material';
 
 function Copyright(props) {
   return (
@@ -32,7 +22,7 @@ const theme = createTheme();
 
 function LoginPage() {
   const navigate = useNavigate();
-  const id = localStorage.getItem('id');
+  const id = localStorage.getItem('com_id');
   useEffect(() => {
     if (id) {
       console.log('Already Login');
@@ -58,8 +48,8 @@ function LoginPage() {
       .then(result => {
         const res = result.data['res'];
         if (res === 'true') {
-          localStorage.setItem('id', result.data.id);
-          localStorage.setItem('name', result.data.name);
+          localStorage.setItem('com_id', result.data.id);
+          localStorage.setItem('com_client_name', result.data.name);
           navigate('/');
         } else if (res === 'Password is Incorrect') setPwdError(true);
         else {

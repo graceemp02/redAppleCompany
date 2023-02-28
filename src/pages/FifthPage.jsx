@@ -13,7 +13,6 @@ const FifthPage = () => {
         lable='Red Apple to Issue Certification Application'
       />
       <TextInput name='certificationApproveBy' lable='Certification Approved By' type='text' />
-      {/* <TextInput */}
         <DateInput 
         name='warrantyAgreeDate'
         lable='1 Year Warranty Agreement Termination Date'

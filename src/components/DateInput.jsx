@@ -12,7 +12,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 const FileInput = ({ lable, name }) => {
   const [value, setValue] = useState(dayjs(new Date()));
   const [dialog, setDialog] = useState({ status: false, msg: '', title: '' });
-  const id = localStorage.getItem('id');
+  const id = localStorage.getItem('com_id');
   const [shrk, setShrk] = useState();
   const ref = useRef();
   useEffect(() => {
@@ -42,7 +42,7 @@ const FileInput = ({ lable, name }) => {
           setDialog({
             status: true,
             title: 'Success',
-            msg: ` Updaded Successfully`,
+            msg: ` Updated Successfully`,
           });
         } else {
           setDialog({

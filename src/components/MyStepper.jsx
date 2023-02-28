@@ -14,10 +14,12 @@ const steps = [
 ];
 
 export default function HorizontalNonLinearStepper() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(
+    () => +localStorage.getItem('com_active_step')
+  );
   const [completed, setCompleted] = React.useState({});
   const [isAllowed, setIsAllowed] = React.useState(false);
-  const id = localStorage.getItem('id');
+  const id = localStorage.getItem('com_id');
 
   const totalSteps = () => {
     return steps.length;
@@ -43,14 +45,17 @@ export default function HorizontalNonLinearStepper() {
           steps.findIndex((step, i) => !(i in completed))
         : activeStep + 1;
     setActiveStep(newActiveStep);
+    localStorage.setItem('com_active_step', newActiveStep);
   };
 
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
+    localStorage.setItem('com_active_step', activeStep - 1);
   };
 
   const handleStep = step => () => {
     setActiveStep(step);
+    localStorage.setItem('com_active_step', step);
   };
 
   // const handleComplete = () => {

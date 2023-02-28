@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 
 const Protected = () => {
   const navigate = useNavigate();
-  const id = localStorage.getItem('id');
+  const id = localStorage.getItem('com_id');
   useEffect(() => {
     if (!id) {
       navigate('/login');

@@ -7,7 +7,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 let theme = createTheme({ typography: { color: 'black', button: { textTransform: 'none' } } });
 function App() {
   return (
-    // <BrowserRouter>
     <BrowserRouter basename='/company'>
       <ThemeProvider theme={theme}>
         <Routes>

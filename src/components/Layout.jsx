@@ -17,7 +17,7 @@ import MyStepper from './MyStepper';
 let theme = createTheme();
 const redColor = theme.palette.error.main;
 const Layout = () => {
-  const name = localStorage.getItem('name');
+  const name = localStorage.getItem('com_client_name');
   const navigate = useNavigate();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
