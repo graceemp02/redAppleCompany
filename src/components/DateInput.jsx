@@ -22,7 +22,7 @@ const FileInput = ({ lable, name }) => {
         const data = res.data.res;
         if (data) {
           setShrk(true);
-          ref.current.value = data;
+          setValue(data);
         }
       })
       .catch(err => console.log(err));
