@@ -41,7 +41,7 @@ const FileCS = ({ lable, name, sName }) => {
     getStatus();
   }, [id, name]);
   useEffect(() => {
-    const interval = setInterval(() => getStatus(), 1000);
+    const interval = setInterval(getStatus, 1000);
     return () => clearInterval(interval);
   }, []);
   const handleSubmit = async e => {
